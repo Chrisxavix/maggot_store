@@ -13,65 +13,64 @@ import { lazy } from "react";
 const AuthLayout = lazy(()=> import('./auth/layouts/AuthLayout'))
 const AdminLayout = lazy(()=> import('./admin/layouts/AdminLayout'))
 
-export const appRouter = createBrowserRouter(
-  [
-    {
-      path: '/',
-      element: <ShopLayout></ShopLayout>,
-      children: [
-        {
-          index: true,
-          element: <HomePage></HomePage>
-        },
-        {
-          path: 'product/:idSlug',
-          element: <ProductPage></ProductPage>
-        },
-        {
-          path: 'gender/:gender',
-          element: <GenderPage></GenderPage>
-        },
-      ]
-    },
-    {
-      path: '/auth',
-      element: <AuthLayout></AuthLayout>,
-      children: [
-        {
-          index: true,
-          element: <Navigate to='/auth/login'></Navigate>
-        },
-        {
-          path: 'login',
-          element: <LoginPage></LoginPage>
-        },
-        {
-          path: 'register',
-          element: <RegisterPage></RegisterPage>
-        },
-      ]
-    },
-    {
-      path: '/admin',
-      element: <AdminLayout></AdminLayout>,
-      children: [
-        {
-          index: true,
-          element: <DashboardPage></DashboardPage>
-        },
-        {
-          path: 'products',
-          element: <AdminProductsPage></AdminProductsPage>
-        },
-        {
-          path: 'product/:id',
-          element: <AdminProductPage></AdminProductPage>
-        },
-      ]
-    },
-    {
-      path: '*',
-      element: <Navigate to='/'></Navigate>
-    }
+export const appRouter = createBrowserRouter([
+  {
+    path: '/',
+    element: <ShopLayout></ShopLayout>,
+    children: [
+      {
+        index: true,
+        element: <HomePage></HomePage>
+      },
+      {
+        path: 'product/:idSlug',
+        element: <ProductPage></ProductPage>
+      },
+      {
+        path: 'gender/:gender',
+        element: <GenderPage></GenderPage>
+      },
+    ]
+  },
+  {
+    path: '/auth',
+    element: <AuthLayout></AuthLayout>,
+    children: [
+      {
+        index: true,
+        element: <Navigate to='/auth/login'></Navigate>
+      },
+      {
+        path: 'login',
+        element: <LoginPage></LoginPage>
+      },
+      {
+        path: 'register',
+        element: <RegisterPage></RegisterPage>
+      },
+    ]
+  },
+  {
+    path: '/admin',
+    element: <AdminLayout></AdminLayout>,
+    children: [
+      {
+        index: true,
+        element: <DashboardPage></DashboardPage>
+      },
+      {
+        path: 'products',
+        element: <AdminProductsPage></AdminProductsPage>
+      },
+      {
+        path: 'products/:id',
+        element: <AdminProductPage></AdminProductPage>
+      },
+    ]
+  },
+  {
+    path: '*',
+    element: <Navigate to='/'></Navigate>
+  }
   ]
 )
