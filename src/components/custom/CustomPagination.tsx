@@ -25,7 +25,7 @@ export const CustomPagination = ({ totalPages }: Props) => {
       <Button
         variant="outline"
         size="sm"
-        // disabled={page === 1}
+        isDisabled={page === 1}
         onClick={() => handlePageChange(page - 1)}
       >
         <ChevronLeft className="h-4 w-4" />
@@ -46,7 +46,7 @@ export const CustomPagination = ({ totalPages }: Props) => {
       <Button
         variant="outline"
         size="sm"
-        // disabled={page === totalPages}
+        isDisabled={page === totalPages}
         onClick={() => handlePageChange(page + 1)}
       >
         Siguientes
