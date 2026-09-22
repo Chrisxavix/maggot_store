@@ -12,8 +12,6 @@ export const AdminSidebar: React.FC<SidebarProps> = ({isCollapsed, onToggle,}) =
   const { pathname } = useLocation();
   const { user } = useAuthStore();
 
-  console.log({user})
-
   const menuItems = [
     { icon: Home, label: 'Dashboard', to: '/admin' },
     { icon: BarChart3, label: 'Productos', to: '/admin/products' },
@@ -24,8 +22,6 @@ export const AdminSidebar: React.FC<SidebarProps> = ({isCollapsed, onToggle,}) =
     { icon: Settings, label: 'Ajustes' },
     { icon: HelpCircle, label: 'Ayuda' },
   ];
-
-  console.log({ pathname });
 
   const isActiveRoute = (to: string) => {
     if (pathname.includes('/admin/products/') && to === '/admin/products') {

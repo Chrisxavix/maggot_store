@@ -9,4 +9,5 @@
 
 # Tecniología
 TanStack Query para consumo de APIS. 
-Zustand para gestor de estado
+Zustand para gestor de estado.
+UseForm par los formularios.
